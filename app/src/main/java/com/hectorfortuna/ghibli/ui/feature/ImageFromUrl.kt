@@ -1,5 +1,6 @@
 package com.hectorfortuna.ghibli.ui.feature
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
@@ -19,6 +20,7 @@ fun ImageFromUrl(url: String) {
         contentDescription = null,
         modifier = Modifier
             .fillMaxWidth()
+            .fillMaxSize()
             .height(120.dp)
             .clip(MaterialTheme.shapes.medium),
         contentScale = ContentScale.Crop

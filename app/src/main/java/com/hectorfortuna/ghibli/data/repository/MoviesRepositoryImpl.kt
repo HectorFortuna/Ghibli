@@ -7,8 +7,8 @@ import com.hectorfortuna.ghibli.data.remote.RemoteDataSource
 class MoviesRepositoryImpl(
     private val remoteDataSource: RemoteDataSource
 ) : MoviesRepository {
-    override suspend fun getMoviesRepository(): List<MovieInfo> {
-        val response = remoteDataSource.getMovieDataResponse()
+    override suspend fun getMoviesRepository(limit:Int): List<MovieInfo> {
+        val response = remoteDataSource.getMovieDataResponse(limit)
         return MoviesMapper.mapToDataInfoList(response)
 
     }

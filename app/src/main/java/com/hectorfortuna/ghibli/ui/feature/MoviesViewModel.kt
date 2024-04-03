@@ -17,12 +17,12 @@ class MoviesViewModel(
     val movieInfoState:StateFlow<MoviesInfoState> = _movieInfoState.asStateFlow()
 
     init {
-        getMoviesInfo()
+        getMoviesInfo(limit = 250)
     }
 
-    private fun getMoviesInfo(){
+    private fun getMoviesInfo(limit:Int){
         viewModelScope.launch {
-            val movieInfo = repository.getMoviesRepository()
+            val movieInfo = repository.getMoviesRepository(limit)
             _movieInfoState.update {
                 it.copy(movieInfo = movieInfo)
             }

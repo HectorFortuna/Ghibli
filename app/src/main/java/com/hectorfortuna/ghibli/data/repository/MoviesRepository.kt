@@ -4,5 +4,5 @@ import com.hectorfortuna.ghibli.data.model.MovieInfo
 
 interface MoviesRepository {
 
-    suspend fun getMoviesRepository(): List<MovieInfo>
+    suspend fun getMoviesRepository(limit:Int): List<MovieInfo>
 }

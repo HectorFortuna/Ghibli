@@ -9,9 +9,9 @@ class KtorRemoteDataSource(private val httpClient: HttpClient): RemoteDataSource
     companion object{
         private const val BASE_URL = "https://ghibliapi.vercel.app"
     }
-    override suspend fun getMovieDataResponse(): List<MovieDataResponse> {
+    override suspend fun getMovieDataResponse(limit: Int): List<MovieDataResponse> {
         return httpClient
-            .get("$BASE_URL/films")
+            .get("$BASE_URL/films?limit=$limit")
             .body()
     }
 }
